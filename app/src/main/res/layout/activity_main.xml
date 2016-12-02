@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.emba.embaapp.MainActivity">
+
+    <com.emba.embaapp.widget.ScrollControlViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/actionbar_layout_tmp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="true"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.emba.embaapp.widget.tabview.TabItem
+                android:id="@+id/actionbar_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="0"
+                app:icon_normal="@mipmap/icon_serve"
+                app:icon_selected="@mipmap/icon_serve_selected"
+                app:text_content="@string/tab_title_info"
+                app:text_normal_color="@color/home_tab_color"
+                app:text_select_color="@color/home_tab_selected_color"
+                app:text_size="12sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.emba.embaapp.widget.tabview.TabItem
+                android:id="@+id/actionbar_publish"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="1"
+                app:icon_normal="@mipmap/icon_message"
+                app:icon_selected="@mipmap/icon_message_selected"
+                app:text_content="@string/tab_title_publish"
+                app:text_normal_color="@color/home_tab_color"
+                app:text_select_color="@color/home_tab_selected_color"
+                app:text_size="12sp" />
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>
