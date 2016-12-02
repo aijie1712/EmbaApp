@@ -43,8 +43,7 @@ public class WebJsClient {
     @JavascriptInterface
     public void openContentURL(String url) {
         LogUtils.i("openContentURL" + url);
-//        String allURl = url + ";jsessionid=" + MyApplication.sessionId;
-        String allURl = url + MyApplication.sessionId;
+        String allURl = url + ";jsessionid=" + MyApplication.sessionId;
         Intent intent = new Intent(activity, ContentWebActivity.class);
         intent.putExtra(ContentWebActivity.URL, allURl);
         activity.startActivity(intent);
