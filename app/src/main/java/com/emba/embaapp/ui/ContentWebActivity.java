@@ -40,4 +40,6 @@ public class ContentWebActivity extends BaseActivity {
         }
         webView.loadUrl(url);
     }
+
+
 }

@@ -30,6 +30,7 @@ public class WebJsClient {
      */
     @JavascriptInterface
     public void loginToMain(String sessionID) {
+        LogUtils.i("loginToMain");
         SpUtils.getInstance(MyApplication.getApplication()).saveString(AppConstant.SESSIONID_KEY, sessionID);
         MyApplication.sessionId = sessionID;
         Intent intent = new Intent(activity, MainActivity.class);
@@ -49,10 +50,10 @@ public class WebJsClient {
         activity.startActivity(intent);
     }
 
-    @JavascriptInterface
-    public void toMainActivity() {
-        Intent intent = new Intent(activity, MainActivity.class);
-        activity.startActivity(intent);
-        activity.finish();
-    }
+//    @JavascriptInterface
+//    public void toMainActivity() {
+//        Intent intent = new Intent(activity, MainActivity.class);
+//        activity.startActivity(intent);
+//        activity.finish();
+//    }
 }

@@ -52,7 +52,6 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initDatas() {
-        LogUtils.i("homeFragment==" + url);
         webView.loadUrl(url);
     }
 }

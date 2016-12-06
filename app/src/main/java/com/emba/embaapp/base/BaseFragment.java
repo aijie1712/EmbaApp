@@ -1,6 +1,7 @@
 package com.emba.embaapp.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -10,11 +11,18 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.emba.embaapp.AppConstant;
+import com.emba.embaapp.MainActivity;
+import com.emba.embaapp.MyApplication;
 import com.emba.embaapp.R;
+import com.emba.embaapp.ui.ContentWebActivity;
+import com.emba.embaapp.utils.LogUtils;
+import com.emba.embaapp.utils.SpUtils;
 import com.emba.embaapp.web.MyWebChromeClient;
 import com.emba.embaapp.web.WebJsClient;
 
@@ -87,7 +95,33 @@ public abstract class BaseFragment extends Fragment {
         // 为WebView设置WebViewClient处理某些操作
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new MyWebChromeClient());
-        webView.addJavascriptInterface(new WebJsClient(getActivity()), "embaApp");
+//        webView.addJavascriptInterface(new WebJsClient(getActivity()), "embaApp");
+        webView.addJavascriptInterface(this, "embaApp");
+    }
+
+    /**
+     * 登录成功，跳转到首页的方法
+     */
+    @JavascriptInterface
+    public void loginToMain(String sessionID) {
+        LogUtils.i("loginToMain");
+        SpUtils.getInstance(MyApplication.getApplication()).saveString(AppConstant.SESSIONID_KEY, sessionID);
+        MyApplication.sessionId = sessionID;
+        Intent intent = new Intent(activity, MainActivity.class);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+
+    /**
+     * @param url 打开新页的接口
+     */
+    @JavascriptInterface
+    public void openContentURL(String url) {
+        LogUtils.i("openContentURL" + url);
+        String allURl = url + ";jsessionid=" + MyApplication.sessionId;
+        Intent intent = new Intent(activity, ContentWebActivity.class);
+        intent.putExtra(ContentWebActivity.URL, allURl);
+        activity.startActivity(intent);
     }
 
     public abstract void initDatas();
