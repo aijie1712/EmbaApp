@@ -12,6 +12,7 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.emba.embaapp.AppConstant;
 import com.emba.embaapp.MainActivity;
@@ -163,6 +164,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @JavascriptInterface
     public void downLoadFile(String url,final String fileName) {
+        LogUtils.i("开始下载==url=="+url+"==fileName=="+fileName);
+        Toast.makeText(BaseActivity.this,"开始下载",Toast.LENGTH_SHORT).show();
         File file = new File(getExternalCacheDir(),fileName);
         if (file.exists()) {
             file.delete();
@@ -177,10 +180,12 @@ public abstract class BaseActivity extends AppCompatActivity {
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         LogUtils.e("onError==" + e.toString());
+                        Toast.makeText(BaseActivity.this,"下载失败，请重试",Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onResponse(File response, int id) {
+                        Toast.makeText(BaseActivity.this,"下载完成",Toast.LENGTH_SHORT).show();
                         LogUtils.i("onResponse==filePath==" + response.getAbsolutePath());
                         // 下载完成，点击查看
                         openFile(response);
