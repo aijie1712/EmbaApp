@@ -21,10 +21,10 @@ import com.emba.embaapp.MainActivity;
 import com.emba.embaapp.MyApplication;
 import com.emba.embaapp.R;
 import com.emba.embaapp.ui.ContentWebActivity;
+import com.emba.embaapp.ui.SplashActivity;
 import com.emba.embaapp.utils.LogUtils;
 import com.emba.embaapp.utils.SpUtils;
 import com.emba.embaapp.web.MyWebChromeClient;
-import com.emba.embaapp.web.WebJsClient;
 
 import butterknife.ButterKnife;
 
@@ -122,6 +122,18 @@ public abstract class BaseFragment extends Fragment {
         Intent intent = new Intent(activity, ContentWebActivity.class);
         intent.putExtra(ContentWebActivity.URL, allURl);
         activity.startActivity(intent);
+    }
+
+    /**
+     * 退出帐号 embaApp.exitAccount();
+     */
+    @JavascriptInterface
+    public void exitAccount() {
+        MyApplication.sessionId = "";
+        SpUtils.getInstance(getSupportActivity().getApplicationContext()).saveString(AppConstant.SESSIONID_KEY, "");
+        Intent intent = new Intent(getSupportActivity(), SplashActivity.class);
+        startActivity(intent);
+        getSupportActivity().finish();
     }
 
     public abstract void initDatas();

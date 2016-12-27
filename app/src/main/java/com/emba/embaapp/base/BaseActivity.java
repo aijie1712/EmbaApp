@@ -19,6 +19,7 @@ import com.emba.embaapp.MainActivity;
 import com.emba.embaapp.MyApplication;
 import com.emba.embaapp.R;
 import com.emba.embaapp.ui.ContentWebActivity;
+import com.emba.embaapp.ui.SplashActivity;
 import com.emba.embaapp.utils.LogUtils;
 import com.emba.embaapp.utils.SpUtils;
 import com.emba.embaapp.utils.UiUtil;
@@ -250,6 +251,18 @@ public abstract class BaseActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+    }
+
+    /**
+     * 退出帐号 embaApp.exitAccount();
+     */
+    @JavascriptInterface
+    public void exitAccount() {
+        MyApplication.sessionId = "";
+        SpUtils.getInstance(getApplicationContext()).saveString(AppConstant.SESSIONID_KEY, "");
+        Intent intent = new Intent(this, SplashActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
