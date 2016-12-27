@@ -19,4 +19,6 @@ public interface AppConstant {
     String server_require = "http://171.8.196.92:8090/emba/serviceNeeds;jsessionid=";
     // 消息列表
     String message_list = "http://171.8.196.92:8090/emba/infoList;jsessionid=";
+    // 个人中心
+    String mine_center = "http://171.8.196.92:8090/emba/mycenter;jsessionid=";
 }

@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     TabItem actionbarInfo;
     @Bind(R.id.actionbar_publish)
     TabItem actionbarPublish;
+    @Bind(R.id.actionbar_center)
+    TabItem actionbar_center;
 
     private int mIndex = 0;
     private List<TabItem> mTabItems;
@@ -43,15 +45,17 @@ public class MainActivity extends AppCompatActivity {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(HomeFragment.newInstance(AppConstant.server_require));
         fragmentList.add(HomeFragment.newInstance(AppConstant.message_list));
+        fragmentList.add(HomeFragment.newInstance(AppConstant.mine_center));
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentList);
         mViewPager.setAdapter(viewPagerAdapter);
+        mViewPager.setOffscreenPageLimit(3);
         mViewPager.setScroll(false);
         mViewPager.addOnPageChangeListener(mViewPagerChangeListener);
         mViewPager.setCurrentItem(0);
     }
 
     private void initBottomView() {
-        mTabItemsId = new int[]{R.id.actionbar_info, R.id.actionbar_publish};
+        mTabItemsId = new int[]{R.id.actionbar_info, R.id.actionbar_publish,R.id.actionbar_center};
         mTabItems = new ArrayList<>();
         for (int i = 0; i < mTabItemsId.length; i++) {
             TabItem tabItem = (TabItem) findViewById(mTabItemsId[i]);
