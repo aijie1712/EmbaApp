@@ -50,6 +50,18 @@ public class SpUtils {
         return sharedPreferences.getBoolean(key, defaultValue);
     }
 
+    public void saveSessionId(String sessionId){
+        saveString(AppConstant.SESSIONID_KEY,sessionId);
+    }
+
+    public String getSessionId(){
+        return getString(AppConstant.SESSIONID_KEY);
+    }
+
+    public void clearSp(){
+        sharedPreferences.edit().clear().apply();
+    }
+
     public void loginSuccess() {
         saveBoolean(AppConstant.IS_LOGIN, true);
     }
