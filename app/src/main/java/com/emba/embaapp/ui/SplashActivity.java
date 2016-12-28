@@ -21,6 +21,7 @@ public class SplashActivity extends BaseActivity {
         super.initView();
         if (NetUtils.isConnected(this.getApplicationContext())) {
             webView.loadUrl(AppConstant.loginUrl);
+//            webView.loadUrl("file:///android_asset/guide.html");
         } else {
             UiUtil.showToast(this,"没有网络，请先设置网络");
             this.finish();

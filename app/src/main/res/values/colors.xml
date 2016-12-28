@@ -8,5 +8,6 @@
     <color name="home_tab_selected_color">#4BB1FA</color>
     <color name="home_tab_color">#9E9E9E</color>
 
+    <!--分割线颜色-->
     <color name="splite_color">#4BB1FA</color>
 </resources>
