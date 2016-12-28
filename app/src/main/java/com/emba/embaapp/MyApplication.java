@@ -1,7 +1,10 @@
 package com.emba.embaapp;
 
 import android.app.Application;
+import android.net.Uri;
+import android.webkit.ValueCallback;
 
+import com.emba.embaapp.utils.LogUtils;
 import com.emba.embaapp.utils.SpUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 
@@ -28,7 +31,7 @@ public class MyApplication extends Application{
         super.onCreate();
         instance = this;
         sessionId = SpUtils.getInstance(this).getString(AppConstant.SESSIONID_KEY);
-
+        LogUtils.i("MyApplication onCreate");
         initHttp();
     }
 

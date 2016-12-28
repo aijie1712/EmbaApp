@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -111,11 +112,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         handler = new Handler();
         initView();
         initData();
+        LogUtils.i("onCreate==" + this.getClass().getSimpleName());
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        LogUtils.i("Activity onDestroy");
         ButterKnife.unbind(this);
     }
 
@@ -150,6 +153,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             if (requestCode == REQUEST_SELECT_FILE) {
@@ -159,19 +174,25 @@ public abstract class BaseActivity extends AppCompatActivity {
                 uploadMessage = null;
             }
         } else if (requestCode == FILECHOOSER_RESULTCODE) {
-            if (null == mUploadMessage)
-                return;
-            // Use MainActivity.RESULT_OK if you're implementing WebView inside Fragment
-            // Use RESULT_OK only if you're implementing WebView inside an Activity
-            Uri result = intent == null || resultCode != MainActivity.RESULT_OK ? null : intent.getData();
-            mUploadMessage.onReceiveValue(result);
-            mUploadMessage = null;
+            try {
+                if (null == mUploadMessage) {
+                    return;
+                }
+                Uri result = intent == null || resultCode != RESULT_OK ? null : intent.getData();
+                if (result == null) {
+                    return;
+                }
+                mUploadMessage.onReceiveValue(result);
+                mUploadMessage = null;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else
             Toast.makeText(getApplicationContext(), "Failed to Upload Image", Toast.LENGTH_LONG).show();
     }
 
     private ValueCallback<Uri[]> uploadMessage;
-    private ValueCallback<Uri> mUploadMessage;
+    private static ValueCallback<Uri> mUploadMessage;
     private final static int REQUEST_SELECT_FILE = 1;
     private final static int FILECHOOSER_RESULTCODE = 2;
 
@@ -337,7 +358,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                LogUtils.i("toMainActivity");
                 onBackPressed();
             }
         });
@@ -357,18 +377,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        LogUtils.i("onBackPressed");
         if (webView == null) {
-            LogUtils.i("webView is null");
             finish();
             return;
         }
         if (webView.canGoBack()) {
-            LogUtils.i("canGoBack");
             webView.goBack();
             webView.goBackOrForward(-1);
         } else {
-            LogUtils.i("finish");
             finish();
         }
     }
