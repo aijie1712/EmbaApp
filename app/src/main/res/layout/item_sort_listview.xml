@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/catalog"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1.0"
+        android:background="@color/color_f5f5f5"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="A"
+        android:textColor="@color/color_333333" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="25dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/im_user_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/im_user_icon"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:ems="16"
+                android:lines="1"
+                android:text="尺许"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_user_deparment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:ems="17"
+                android:lines="1"
+                android:text="市场部"
+                android:textColor="#b2b2b2"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/check_box"
+            style="@style/CustomCheckboxTheme1"
+            android:layout_width="22sp"
+            android:layout_height="22sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</LinearLayout>

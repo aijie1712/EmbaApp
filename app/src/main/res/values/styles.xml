@@ -13,4 +13,21 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <!--分割線的樣式-->
+    <style name="style_listview">
+
+        <item name="android:background">@color/white</item>
+        <item name="android:divider">@color/color_e5e5e5</item>
+        <item name="android:dividerHeight">1px</item>
+        <item name="android:listSelector">@drawable/linearlayout_bg_selector</item>
+
+    </style>
+
+    <style name="CustomCheckboxTheme1" parent="@android:style/Widget.CompoundButton.CheckBox">
+
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/checkbox_style1</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
 </resources>

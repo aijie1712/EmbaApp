@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/userinfo_item_height"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/userinfo_padding"
+    android:paddingRight="@dimen/userinfo_padding">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdf_company_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        app:placeholderImage="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/sdf_company_icon"
+        android:text="北京中云微讯"
+        android:textColor="@color/global_text_color"
+        android:textSize="@dimen/text_14dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/global_bg_color" />
+
+</RelativeLayout>

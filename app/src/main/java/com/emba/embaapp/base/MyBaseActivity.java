@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.emba.embaapp.R;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Administrator on 2017-01-03
  *
@@ -22,8 +24,15 @@ public abstract class MyBaseActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
         initView();
         initData();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 
     protected abstract int getLayoutId();

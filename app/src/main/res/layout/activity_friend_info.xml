@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_friend_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg_color"
+    android:orientation="vertical"
+    tools:context=".ui.FriendInfoActivity">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="#46BCED">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdf_user_icon"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerInParent="true"
+                    app:roundAsCircle="true"
+                    app:roundingBorderColor="@color/white"
+                    app:roundingBorderWidth="3dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/userinfo_padding"
+                android:paddingRight="@dimen/userinfo_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/user_info_name"
+                    android:textColor="@color/global_text_color"
+                    android:textSize="@dimen/text_16dp" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="张小花"
+                    android:textColor="@color/global_text_hint_color"
+                    android:textSize="@dimen/text_14dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/global_bg_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/userinfo_padding"
+                android:paddingRight="@dimen/userinfo_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/user_info_gender"
+                    android:textColor="@color/global_text_color"
+                    android:textSize="@dimen/text_16dp" />
+
+                <TextView
+                    android:id="@+id/tv_user_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="女"
+                    android:textColor="@color/global_text_hint_color"
+                    android:textSize="@dimen/text_14dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/global_bg_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/userinfo_padding"
+                android:paddingRight="@dimen/userinfo_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/user_info_grade"
+                    android:textColor="@color/global_text_color"
+                    android:textSize="@dimen/text_16dp" />
+
+                <TextView
+                    android:id="@+id/tv_user_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="2009级"
+                    android:textColor="@color/global_text_hint_color"
+                    android:textSize="@dimen/text_14dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/userinfo_padding"
+                android:paddingRight="@dimen/userinfo_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/user_info_city"
+                    android:textColor="@color/global_text_color"
+                    android:textSize="@dimen/text_16dp" />
+
+                <TextView
+                    android:id="@+id/tv_user_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="北京"
+                    android:textColor="@color/global_text_hint_color"
+                    android:textSize="@dimen/text_14dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/userinfo_padding"
+                android:paddingRight="@dimen/userinfo_padding">
+
+                <GridView
+                    android:id="@+id/user_cities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:cacheColorHint="#00000000"
+                    android:columnWidth="5dp"
+                    android:fadingEdge="none"
+                    android:focusableInTouchMode="true"
+                    android:horizontalSpacing="8dp"
+                    android:numColumns="2"
+                    android:scrollbars="none"
+                    android:verticalSpacing="5dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/userinfo_padding"
+                android:paddingRight="@dimen/userinfo_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/user_info_company"
+                    android:textColor="@color/global_text_color"
+                    android:textSize="@dimen/text_16dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/btn_send_message"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/userinfo_padding"
+                android:layout_marginRight="@dimen/userinfo_padding"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_send_message_selector"
+                android:text="@string/send_message"
+                android:layout_marginBottom="25dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

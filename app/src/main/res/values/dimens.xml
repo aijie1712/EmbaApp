@@ -11,4 +11,7 @@
     <dimen name="text_18dp">18dp</dimen>
     <dimen name="text_20dp">20dp</dimen>
     <dimen name="text_22dp">22dp</dimen>
+
+    <dimen name="userinfo_padding">15dp</dimen>
+    <dimen name="userinfo_item_height">45dp</dimen>
 </resources>

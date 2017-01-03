@@ -9,4 +9,13 @@
     <string name="tab_title_mine">个人中心</string>
 
     <string name="back">返回</string>
+
+    <!--个人资料-->
+    <string name="title_user_info">个人资料</string>
+    <string name="user_info_name">姓名</string>
+    <string name="user_info_gender">性别</string>
+    <string name="user_info_grade">所属年级</string>
+    <string name="user_info_city">常住城市</string>
+    <string name="user_info_company">所在企业</string>
+    <string name="send_message">发消息</string>
 </resources>

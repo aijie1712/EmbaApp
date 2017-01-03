@@ -4,9 +4,15 @@
     <color name="colorPrimaryDark">#4BB1FA</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="transparent">#00000000</color>
     <!--主页tab颜色-->
     <color name="home_tab_selected_color">#4BB1FA</color>
     <color name="home_tab_color">#9E9E9E</color>
+
+    <color name="global_bg_color">#EDEDED</color>
+
+    <color name="global_text_color">#333333</color>
+    <color name="global_text_hint_color">#999999</color>
 
     <!--分割线颜色-->
     <color name="splite_color">#4BB1FA</color>
@@ -14,4 +20,10 @@
     <color name="title_center_color">#4BB1FA</color>
     <color name="global_blue">#4BB1FA</color>
     <color name="global_blue_light">#47ADF9</color>
+
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_e8e9eb">#e8e9eb</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_333333">#333333</color>
+
 </resources>

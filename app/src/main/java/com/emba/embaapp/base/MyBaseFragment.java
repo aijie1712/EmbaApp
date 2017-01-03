@@ -37,6 +37,7 @@ public abstract class MyBaseFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
         parentView = inflater.inflate(getLayoutId(), container, false);
+        ButterKnife.bind(this,parentView);
         activity = getActivity();
         this.inflater = inflater;
         return parentView;
@@ -49,6 +50,12 @@ public abstract class MyBaseFragment extends Fragment{
         ButterKnife.bind(this, view);
         initView();
         initData();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     protected abstract int getLayoutId();
