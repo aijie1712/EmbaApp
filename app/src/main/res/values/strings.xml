@@ -4,6 +4,9 @@
     <!--主页-->
     <string name="tab_title_info">服务需求</string>
     <string name="tab_title_publish">消息列表</string>
-    <string name="tab_title_attention">关注</string>
-    <string name="tab_title_mine">我的</string>
+    <string name="tab_title_conversations">聊天中心</string>
+    <string name="tab_title_friends">通讯录</string>
+    <string name="tab_title_mine">个人中心</string>
+
+    <string name="back">返回</string>
 </resources>

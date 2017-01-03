@@ -62,6 +62,40 @@
                 app:text_select_color="@color/home_tab_selected_color"
                 app:text_size="12sp" />
         </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.emba.embaapp.widget.tabview.TabItem
+                android:id="@+id/actionbar_conversations"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="2"
+                app:icon_normal="@mipmap/icon_tab_mine"
+                app:icon_selected="@mipmap/icon_tab_mine_selected"
+                app:text_content="@string/tab_title_conversations"
+                app:text_normal_color="@color/home_tab_color"
+                app:text_select_color="@color/home_tab_selected_color"
+                app:text_size="12sp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.emba.embaapp.widget.tabview.TabItem
+                android:id="@+id/actionbar_friends"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="3"
+                app:icon_normal="@mipmap/icon_tab_mine"
+                app:icon_selected="@mipmap/icon_tab_mine_selected"
+                app:text_content="@string/tab_title_friends"
+                app:text_normal_color="@color/home_tab_color"
+                app:text_select_color="@color/home_tab_selected_color"
+                app:text_size="12sp" />
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="0dp"
@@ -72,7 +106,7 @@
                 android:id="@+id/actionbar_center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:tag="2"
+                android:tag="4"
                 app:icon_normal="@mipmap/icon_tab_mine"
                 app:icon_selected="@mipmap/icon_tab_mine_selected"
                 app:text_content="@string/tab_title_mine"

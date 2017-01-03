@@ -100,7 +100,6 @@ public abstract class BaseFragment extends Fragment {
         // 为WebView设置WebViewClient处理某些操作
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new MyWebChromeClient());
-//        webView.addJavascriptInterface(new WebJsClient(getActivity()), "embaApp");
         webView.addJavascriptInterface(this, "embaApp");
     }
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/title_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/icon_blue_back"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/back"
+        android:textColor="@color/global_blue_light"
+        android:textSize="@dimen/text_16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_title_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="通讯录"
+        android:textColor="@color/title_center_color"
+        android:textSize="@dimen/text_18dp" />
+
+</RelativeLayout>
