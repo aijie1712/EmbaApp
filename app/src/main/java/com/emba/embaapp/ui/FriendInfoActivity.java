@@ -1,5 +1,6 @@
 package com.emba.embaapp.ui;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,9 @@ import android.widget.TextView;
 
 import com.emba.embaapp.R;
 import com.emba.embaapp.base.MyBaseActivity;
+import com.emba.embaapp.ui.adapter.GroupMemberGridAdapter;
 import com.emba.embaapp.ui.adapter.UserinfoCityAdapter;
+import com.emba.embaapp.ui.chat.ChatActivity;
 import com.emba.embaapp.utils.DisplayUtils;
 import com.emba.embaapp.utils.UiUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -64,7 +67,7 @@ public class FriendInfoActivity extends MyBaseActivity {
         cityList.add("北京");
         cityAdapter = new UserinfoCityAdapter(this, cityList);
         user_cities.setAdapter(cityAdapter);
-        getTotalHeightOfGridView(user_cities);
+        // getTotalHeightOfGridView(user_cities);
     }
 
     private void initToolbar() {
@@ -82,7 +85,8 @@ public class FriendInfoActivity extends MyBaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_send_message:  // 发送消息
-                UiUtil.showToast(getApplicationContext(), "发送消息");
+                Intent intent = new Intent(FriendInfoActivity.this, ChatActivity.class);
+                startActivity(intent);
                 break;
         }
     }

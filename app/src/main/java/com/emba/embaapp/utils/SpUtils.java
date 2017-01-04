@@ -69,4 +69,13 @@ public class SpUtils {
     public Boolean isLogin() {
         return getBoolean(AppConstant.IS_LOGIN, false);
     }
+
+    private static final String SOFT_KEYBOARD_HEIGHT = "SoftKeyboardHeight";
+    public int getCachedKeyboardHeight(){
+        return get(SOFT_KEYBOARD_HEIGHT, 0);
+    }
+
+    public int get(String key, int defValue) {
+        return sharedPreferences.getInt(key, defValue);
+    }
 }

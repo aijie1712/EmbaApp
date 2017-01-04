@@ -18,4 +18,7 @@
     <string name="user_info_city">常住城市</string>
     <string name="user_info_company">所在企业</string>
     <string name="send_message">发消息</string>
+
+    <!--群组信息-->
+    <string name="title_group_members">聊天信息( %1$d )</string>
 </resources>

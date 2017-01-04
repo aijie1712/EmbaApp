@@ -26,4 +26,9 @@
     <color name="color_f5f5f5">#f5f5f5</color>
     <color name="color_333333">#333333</color>
 
+    <!--聊天界面-->
+    <color name="chat_blue">#47C1F2</color>
+    <color name="chat_white">#FFFFFF</color>
+    <color name="chat_input_color">#E6F7ED</color>
+
 </resources>

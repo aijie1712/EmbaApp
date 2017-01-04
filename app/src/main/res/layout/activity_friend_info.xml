@@ -24,13 +24,15 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="160dp"
                 android:background="#46BCED">
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/sdf_user_icon"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    app:placeholderImage="@drawable/icon_default_image"
+                    app:placeholderImageScaleType="centerCrop"
                     android:layout_centerInParent="true"
                     app:roundAsCircle="true"
                     app:roundingBorderColor="@color/white"
@@ -154,6 +156,12 @@
                     android:text="北京"
                     android:textColor="@color/global_text_hint_color"
                     android:textSize="@dimen/text_14dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/global_bg_color" />
 
             </RelativeLayout>
 
