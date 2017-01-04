@@ -30,6 +30,10 @@ public class ChatView extends LinearLayout implements View.OnClickListener {
 
     private Context context;
 
+    private boolean mHasInit;
+
+    private onKybdsChangeListener mKybdsListener;
+
     public ChatView(Context context) {
         this(context, null);
     }
@@ -73,10 +77,10 @@ public class ChatView extends LinearLayout implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_emoji:  // 显示表情
-                LogUtils.i("显示表情");
+
                 break;
             case R.id.view_send:  // 发送消息
-                LogUtils.i("发送消息");
+
                 break;
         }
     }
@@ -113,5 +117,36 @@ public class ChatView extends LinearLayout implements View.OnClickListener {
                     .getWindowToken(), 0);
             imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+//        if (!mHasInit) {
+//            mHasInit = true;
+//            mHeight = b;
+//            if (mKybdsListener != null) {
+//                mKybdsListener.onKeyBoardStateChange(KEYBOARD_STATE_INIT);
+//            }
+//        } else {
+//            mKybdsListener.onKeyBoardStateChange(KEYBOARD_STATE_INIT);
+//
+//            mHeight = mHeight < b ? b : mHeight;
+//        }
+//        if (mHasInit && mHeight > b) {
+//            mHasKeybord = true;
+//            if (mKybdsListener != null) {
+//                mKybdsListener.onKeyBoardStateChange(KEYBOARD_STATE_SHOW);
+//            }
+//        }if (mHasInit && mHasKeybord && mHeight == b) {
+//            mHasKeybord = false;
+//            if (mKybdsListener != null) {
+//                mKybdsListener.onKeyBoardStateChange(KEYBOARD_STATE_HIDE);
+//            }
+//        }
+    }
+
+    public interface onKybdsChangeListener{
+        void onKeyBoardStateChange(int state);
     }
 }
