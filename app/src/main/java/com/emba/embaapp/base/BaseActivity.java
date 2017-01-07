@@ -274,6 +274,29 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * 登录成功，跳转到首页的方法
+     */
+    @JavascriptInterface
+    public void loginToMain(String sessionID,String account,String pwd,boolean saveAccount,boolean savePwd) {
+        LogUtils.i("loginToMain sessionID=="+sessionID+"  account=="+account+"  pwd=="+pwd+"  saveAccount=="+saveAccount+"  savePwd=="+savePwd);
+        SpUtils spUtils = SpUtils.getInstance(MyApplication.getApplication());
+        spUtils.saveString(AppConstant.SESSIONID_KEY, sessionID);
+        if (saveAccount) {
+            spUtils.saveBoolean(AppConstant.IS_SAVE_ACCOUNT,saveAccount);
+            spUtils.saveString(AppConstant.MY_ACCOUNT,account);
+            if (savePwd) {
+                spUtils.saveBoolean(AppConstant.IS_SAVE_PWD,savePwd);
+                spUtils.saveString(AppConstant.MY_PWD,pwd);
+            }
+        }
+
+        MyApplication.sessionId = sessionID;
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     @JavascriptInterface
     public void downLoadFile(String url, final String fileName) {
         LogUtils.i("开始下载==url==" + url + "==fileName==" + fileName);

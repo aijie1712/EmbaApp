@@ -4,20 +4,15 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.emba.embaapp.R;
 import com.emba.embaapp.base.MyBaseActivity;
-import com.emba.embaapp.ui.adapter.GroupMemberGridAdapter;
 import com.emba.embaapp.ui.adapter.UserinfoCityAdapter;
-import com.emba.embaapp.ui.chat.ChatActivity;
 import com.emba.embaapp.utils.DisplayUtils;
-import com.emba.embaapp.utils.UiUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
@@ -85,8 +80,8 @@ public class FriendInfoActivity extends MyBaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_send_message:  // 发送消息
-                Intent intent = new Intent(FriendInfoActivity.this, ChatActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(FriendInfoActivity.this, ChatActivity.class);
+//                startActivity(intent);
                 break;
         }
     }

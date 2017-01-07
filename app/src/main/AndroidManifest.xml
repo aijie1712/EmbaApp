@@ -27,13 +27,11 @@
             android:name=".ui.SplashActivity"
             android:screenOrientation="portrait">
 
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
         <activity
             android:name=".MainActivity"
@@ -41,11 +39,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".ui.ContentWebActivity"
@@ -54,7 +52,6 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.FriendInfoActivity" />
         <activity android:name=".ui.GroupInfoActivity" />
-        <activity android:name=".ui.chat.ChatActivity"></activity>
     </application>
 
 </manifest>

@@ -9,11 +9,17 @@ package com.emba.embaapp;
 public interface AppConstant {
 
     String SESSIONID_KEY = "sessionId";
+    String MY_ACCOUNT = "my_account";
+    String MY_PWD = "my_pwd";
+    String IS_SAVE_ACCOUNT = "IS_SAVE_ACCOUNT";
+    String IS_SAVE_PWD = "IS_SAVE_ACCOUNT";
     // 是否登录
     String IS_LOGIN = "is_login";
 
+    String BASE_URL = "http://171.8.196.92:8090";
+
     // 登录地址
-    String loginUrl = "http://171.8.196.92:8090/emba/?deviceType=ios";
+    String loginUrl = BASE_URL+"/emba/?";
 
     // 服务需求
     String server_require = "http://171.8.196.92:8090/emba/serviceNeeds;jsessionid=";
