@@ -12,7 +12,7 @@ public interface AppConstant {
     String MY_ACCOUNT = "my_account";
     String MY_PWD = "my_pwd";
     String IS_SAVE_ACCOUNT = "IS_SAVE_ACCOUNT";
-    String IS_SAVE_PWD = "IS_SAVE_ACCOUNT";
+    String IS_SAVE_PWD = "IS_SAVE_PWD";
     // 是否登录
     String IS_LOGIN = "is_login";
 

@@ -218,8 +218,15 @@ public abstract class BaseFragment extends Fragment {
      */
     @JavascriptInterface
     public void exitAccount() {
+        // 清空缓存信息
         MyApplication.sessionId = "";
-        SpUtils.getInstance(getSupportActivity().getApplicationContext()).saveString(AppConstant.SESSIONID_KEY, "");
+        SpUtils spUtils = SpUtils.getInstance(getSupportActivity().getApplicationContext());
+        spUtils.saveString(AppConstant.SESSIONID_KEY, "");
+//        spUtils.saveBoolean(AppConstant.IS_SAVE_ACCOUNT,false);
+//        spUtils.saveString(AppConstant.MY_ACCOUNT,"");
+//        spUtils.saveBoolean(AppConstant.IS_SAVE_PWD,false);
+//        spUtils.saveString(AppConstant.MY_PWD,"");
+        // 跳转到登陆页面
         Intent intent = new Intent(getSupportActivity(), SplashActivity.class);
         startActivity(intent);
         getSupportActivity().finish();

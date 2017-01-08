@@ -278,17 +278,22 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 登录成功，跳转到首页的方法
      */
     @JavascriptInterface
-    public void loginToMain(String sessionID,String account,String pwd,boolean saveAccount,boolean savePwd) {
-        LogUtils.i("loginToMain sessionID=="+sessionID+"  account=="+account+"  pwd=="+pwd+"  saveAccount=="+saveAccount+"  savePwd=="+savePwd);
+    public void loginToMain(String sessionID, String account, String pwd, boolean saveAccount, boolean savePwd) {
+        LogUtils.i("loginToMain sessionID==" + sessionID + "  account==" + account + "  pwd==" + pwd + "  saveAccount==" + saveAccount + "  savePwd==" + savePwd);
         SpUtils spUtils = SpUtils.getInstance(MyApplication.getApplication());
         spUtils.saveString(AppConstant.SESSIONID_KEY, sessionID);
         if (saveAccount) {
-            spUtils.saveBoolean(AppConstant.IS_SAVE_ACCOUNT,saveAccount);
-            spUtils.saveString(AppConstant.MY_ACCOUNT,account);
+            spUtils.saveBoolean(AppConstant.IS_SAVE_ACCOUNT, saveAccount);
+            spUtils.saveString(AppConstant.MY_ACCOUNT, account);
             if (savePwd) {
-                spUtils.saveBoolean(AppConstant.IS_SAVE_PWD,savePwd);
-                spUtils.saveString(AppConstant.MY_PWD,pwd);
+                spUtils.saveBoolean(AppConstant.IS_SAVE_PWD, savePwd);
+                spUtils.saveString(AppConstant.MY_PWD, pwd);
             }
+        } else {
+            spUtils.saveBoolean(AppConstant.IS_SAVE_ACCOUNT, false);
+            spUtils.saveString(AppConstant.MY_ACCOUNT, "");
+            spUtils.saveBoolean(AppConstant.IS_SAVE_PWD, false);
+            spUtils.saveString(AppConstant.MY_PWD, "");
         }
 
         MyApplication.sessionId = sessionID;

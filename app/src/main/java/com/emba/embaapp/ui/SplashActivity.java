@@ -27,6 +27,7 @@ public class SplashActivity extends BaseActivity {
         SpUtils spUtils = SpUtils.getInstance(MyApplication.getApplication());
         boolean isSaveUsername = spUtils.getBoolean(AppConstant.IS_SAVE_ACCOUNT, false);
         boolean isSavePwd = spUtils.getBoolean(AppConstant.IS_SAVE_PWD, false);
+        LogUtils.i("isSaveUsername=="+isSaveUsername+"  isSavePwd=="+isSavePwd);
         String username = "";
         String pwd = "";
         StringBuilder loginUrl = new StringBuilder(AppConstant.loginUrl);
