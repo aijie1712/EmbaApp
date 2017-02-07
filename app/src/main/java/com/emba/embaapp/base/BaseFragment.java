@@ -27,7 +27,7 @@ import com.emba.embaapp.MainActivity;
 import com.emba.embaapp.MyApplication;
 import com.emba.embaapp.R;
 import com.emba.embaapp.ui.ContentWebActivity;
-import com.emba.embaapp.ui.SplashActivity;
+import com.emba.embaapp.ui.LoginActivity;
 import com.emba.embaapp.utils.LogUtils;
 import com.emba.embaapp.utils.SpUtils;
 
@@ -227,7 +227,7 @@ public abstract class BaseFragment extends Fragment {
 //        spUtils.saveBoolean(AppConstant.IS_SAVE_PWD,false);
 //        spUtils.saveString(AppConstant.MY_PWD,"");
         // 跳转到登陆页面
-        Intent intent = new Intent(getSupportActivity(), SplashActivity.class);
+        Intent intent = new Intent(getSupportActivity(), LoginActivity.class);
         startActivity(intent);
         getSupportActivity().finish();
     }

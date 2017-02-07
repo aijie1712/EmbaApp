@@ -24,7 +24,7 @@ import com.emba.embaapp.MainActivity;
 import com.emba.embaapp.MyApplication;
 import com.emba.embaapp.R;
 import com.emba.embaapp.ui.ContentWebActivity;
-import com.emba.embaapp.ui.SplashActivity;
+import com.emba.embaapp.ui.LoginActivity;
 import com.emba.embaapp.utils.LogUtils;
 import com.emba.embaapp.utils.SpUtils;
 import com.emba.embaapp.utils.UiUtil;
@@ -398,7 +398,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void exitAccount() {
         MyApplication.sessionId = "";
         SpUtils.getInstance(getApplicationContext()).saveString(AppConstant.SESSIONID_KEY, "");
-        Intent intent = new Intent(this, SplashActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

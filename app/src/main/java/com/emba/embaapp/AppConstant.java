@@ -16,16 +16,19 @@ public interface AppConstant {
     // 是否登录
     String IS_LOGIN = "is_login";
 
-    String BASE_URL = "http://171.8.196.92:8090";
+    String BASE_URL = "http://beiyou.it371.cn/emba2";
 
     // 登录地址
-    String loginUrl = BASE_URL+"/emba/?";
+    String loginUrl = BASE_URL+"/?";
 
     // 服务需求
-    String server_require = "http://171.8.196.92:8090/emba/serviceNeeds;jsessionid=";
+    String server_require = BASE_URL+"/serviceNeeds;jsessionid=";
     // 消息列表
-    String message_list = "http://171.8.196.92:8090/emba/infoList;jsessionid=";
+    String message_list = BASE_URL+"/infoList;jsessionid=";
     // 个人中心
-    String mine_center = "http://171.8.196.92:8090/emba/mycenter;jsessionid=";
+    String mine_center = BASE_URL+"/mycenter;jsessionid=";
+
+    // emba登录接口
+    String URL_LOGIN = BASE_URL + "/user/isValid";
 
 }
