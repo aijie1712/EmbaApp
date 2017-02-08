@@ -16,4 +16,5 @@
         <attr name="isOnBottomStyle" format="boolean" />
         <attr name="isAutoLoadOnBottom" format="boolean" />
     </declare-styleable>
+
 </resources>

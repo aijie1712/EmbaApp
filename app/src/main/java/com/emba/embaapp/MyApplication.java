@@ -10,9 +10,14 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig;
 import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.cookie.CookieJarImpl;
+import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Cookie;
 import okhttp3.OkHttpClient;
 
 /**
@@ -29,12 +34,16 @@ public class MyApplication extends Application {
      */
     public static String sessionId;
 
+    public static CookieJarImpl cookieJar;
+
+    public static List<Cookie> embaCookies;
+
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
+        embaCookies = new ArrayList<>();
         sessionId = SpUtils.getInstance(this).getString(AppConstant.SESSIONID_KEY);
-        LogUtils.i("MyApplication onCreate");
         initHttp();
 
         initFresco();
@@ -56,14 +65,17 @@ public class MyApplication extends Application {
     }
 
     private void initHttp() {
+        cookieJar = new CookieJarImpl(new PersistentCookieStore(getApplicationContext()));
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
 //                .addInterceptor(new LoggerInterceptor("TAG"))
+                .cookieJar(cookieJar)
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS)
                 .readTimeout(10000L, TimeUnit.MILLISECONDS)
                 //其他配置
                 .build();
 
         OkHttpUtils.initClient(okHttpClient);
+
     }
 
     public static MyApplication getApplication() {

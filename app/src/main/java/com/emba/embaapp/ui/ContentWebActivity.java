@@ -3,8 +3,10 @@ package com.emba.embaapp.ui;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import com.emba.embaapp.MyApplication;
 import com.emba.embaapp.R;
 import com.emba.embaapp.base.BaseActivity;
+import com.emba.embaapp.utils.SpUtils;
 import com.emba.embaapp.utils.UiUtil;
 
 /**
@@ -27,6 +29,7 @@ public class ContentWebActivity extends BaseActivity {
             UiUtil.showToast(this, "参数错误");
             finish();
         }
+        syncCookie(MyApplication.embaCookies);
         webView.loadUrl(url);
     }
 
@@ -38,6 +41,7 @@ public class ContentWebActivity extends BaseActivity {
             UiUtil.showToast(this, "参数错误");
             finish();
         }
+        syncCookie(MyApplication.embaCookies);
         webView.loadUrl(url);
     }
 

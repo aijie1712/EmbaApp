@@ -25,6 +25,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        super.initView();
         String userName = SpUtils.getInstance(MyApplication.getApplication())
                 .getString(AppConstant.MY_ACCOUNT);
         if (TextUtils.isEmpty(userName)) {
@@ -33,6 +34,8 @@ public class SplashActivity extends BaseActivity {
         } else {
             // 本地登陆
             login();
+//            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//            finish();
         }
     }
 
@@ -72,5 +75,7 @@ public class SplashActivity extends BaseActivity {
                         }
                     }
                 });
+//        webView.loadUrl(AppConstant.URL_LOGIN+"/?ReturnUrl=serviceNeeds&deviceType=android&account="
+//                +userName+"&password="+pwd+"&remAccount=on&remPassword=on");
     }
 }

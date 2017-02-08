@@ -9,6 +9,7 @@
     <!-- 获取当前WiFi接入状态和热点信息 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- 读写存储卡 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
